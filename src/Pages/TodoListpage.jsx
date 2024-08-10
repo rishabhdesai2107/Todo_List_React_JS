@@ -5,6 +5,7 @@ import Logout from './Logout.jsx'
 
 export default function TodoListpage() {
   const [showMessage, setShowMessage] = useState(false);
+  const [todo,setTodo] = useState([]);
 
   const [isVisible, setIsVisible] = useState(false);
   const toggleVisibility = () => {
