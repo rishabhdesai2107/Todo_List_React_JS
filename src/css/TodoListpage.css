@@ -99,41 +99,36 @@ input{
     box-shadow: 0 0 30px #ffffff;
 }
 
-.child3{
+ul {
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-direction: column;
-    background: rgba( 255, 255, 255, 0.25 );
-    background: rgba( 255, 255, 255, 0 );
-    backdrop-filter: blur( 4px );
-    -webkit-backdrop-filter: blur( 4px );
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
     border-radius: 10px;
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
+    border: 1px solid rgba(255, 255, 255, 0.18);
     position: absolute;
     top: 200px;
-    height: 500px;
+    height: 450px;
     width: 800px;
-}
-
-ul{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-li{
-    position: absolute;
-    top: 5px;
-    font-size: xx-large;
     color: white;
-    background: rgba( 255, 255, 255, 0.25 );
-    backdrop-filter: blur( 4px );
-    -webkit-backdrop-filter: blur( 4px );
-    border: 1px solid rgba( 255, 255, 255, 0.18 );
-    margin: 10px;
-    padding: 5px;
+    padding: 20px;
+    gap: 10px;
 }
+
+li {
+    width: 100%;
+    font-size: xx-large;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 5px;
+    box-sizing: border-box;
+    display: block;
+}
+
 
 hr{
     color: #fff;
