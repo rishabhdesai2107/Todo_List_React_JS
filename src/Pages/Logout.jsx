@@ -13,7 +13,6 @@ export default function Logout(){
 
         <div className='parent'>
             <div className='child'>
-            <p className='paragraphh'>Rishabh</p>
             <button className='bttlo' onClick={handleLogout}>Logout</button>
         </div>
         </div>

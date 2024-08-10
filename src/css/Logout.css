@@ -9,9 +9,9 @@
 }
 
 .child{
-    height: 350px;
-    width: 350px;
-    background-color: blanchedalmond ;
+    height: 200px;
+    width: 250px;
+    background-color: grey ;
     border-radius: 30px;
     display: flex;
     justify-content: center;
@@ -31,15 +31,9 @@
     border-radius: 20px;
     font-size: large;
     font-weight: bolder;
-    position: absolute;
-    bottom: 40px;
-    margin: 10px;
 
 }
 
-.paragraphh{
-    font-size: xx-large;
-    font-weight: bolder;
-    position: absolute;
-    top: 100px;
+.bttlo:hover{
+    background-color: tomato;
 }

@@ -3,28 +3,35 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f4;
   }
-  
+
   #login-container {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: #8E0E00;
-    background: -webkit-linear-gradient(to right, #1F1C18, #8E0E00);
-    background: linear-gradient(to right, #1F1C18, #8E0E00);
+    background-image: url('../images/dg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
 
 
   }
-  
+
   #login-form {
     background-color: white;
     padding: 2rem;
     border-radius: 5px;
-    box-shadow: 0 0 30px #000000;
     width: 300px;
     text-align: center;
+    background: rgba( 255, 255, 255, 0.25 );
+    box-shadow: 0 30px 32px 0 rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur( 4px );
+    -webkit-backdrop-filter: blur( 4px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
   }
-  
+
   #login-form h2 {
     margin-bottom: 1rem;
   }
@@ -75,7 +82,7 @@ body {
   }
   
   #register-link a {
-    color: #c81515;
+    color: #ff0000;
     text-decoration: none;
   }
   

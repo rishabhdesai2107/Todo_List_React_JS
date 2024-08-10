@@ -26,10 +26,9 @@ export default function TodoListpage() {
     <div className='container'>
       <div className='child1'>
         <h1>To-Do List</h1>
-        <i onClick={toggleVisibility} className="fa-solid fa-user account">{isVisible ? <Logout/> : undefined}</i>
+        <i onClick={toggleVisibility} className="fa-solid fa-user account">{isVisible ? <Logout/> : null}</i>
         <img src={image1} alt='logo'/>
       </div>
-
       <br /><br /><br /><br />
       <div className='child2'>
         <input type="text" placeholder='Enter your task here...' />
