@@ -22,6 +22,7 @@ export default function TodoListpage() {
     }
   }, [showMessage]);
 
+
   return (
     <div className='container'>
       <div className='child1'>
@@ -33,8 +34,11 @@ export default function TodoListpage() {
       <div className='child2'>
         <input type="text" placeholder='Enter your task here...' />
         <button className='addbtn btn-grad2'>Add</button>
+        <hr />
+
       </div>
       <div className='child3'>
+
         <ul>
 
         </ul>

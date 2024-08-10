@@ -29,7 +29,7 @@ h1{
     font-weight: bolder;
     color: red;
     position: absolute;
-    top: 0px;
+    top: 20px;
 }
 
 
@@ -99,6 +99,24 @@ input{
     box-shadow: 0 0 30px #ffffff;
 }
 
+.child3{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    /* background-color: #fff; */
+    position: absolute;
+    top: 200px;
+    height: 500px;
+    width: 800px;
+}
+
+hr{
+    color: #fff;
+    width: 900px;
+    position: absolute;
+    bottom: 0px;
+}
 
 
 
