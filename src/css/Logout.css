@@ -22,20 +22,6 @@
     top: 40px;
 }
 
-.btt{
-    height: 40px;
-    width: 40px;
-    background-color: red;
-    border-radius: 50%;
-    border: none;
-    position: absolute;
-    top: 0px;
-    right: 0px;
-    margin: 20px;
-    font-size: larger;
-    font-weight: bolder;
-
-}
 
 .bttlo{
     height: 50px;
@@ -51,7 +37,7 @@
 
 }
 
-p{
+.paragraphh{
     font-size: xx-large;
     font-weight: bolder;
     position: absolute;

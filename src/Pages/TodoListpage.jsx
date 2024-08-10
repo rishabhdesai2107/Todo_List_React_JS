@@ -1,9 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import '../css/TodoListpage.css';
 import image1 from '../images/mylogo.gif'
+import Logout from './Logout.jsx'
 
 export default function TodoListpage() {
   const [showMessage, setShowMessage] = useState(false);
+
+  const [isVisible, setIsVisible] = useState(false);
+  const toggleVisibility = () => {
+    setIsVisible(!isVisible);
+  };
 
   useEffect(() => {
     setShowMessage(true);
@@ -20,7 +26,7 @@ export default function TodoListpage() {
     <div className='container'>
       <div className='child1'>
         <h1>To-Do List</h1>
-        <i className="fa-solid fa-user account"></i>
+        <i onClick={toggleVisibility} className="fa-solid fa-user account">{isVisible ? <Logout/> : undefined}</i>
         <img src={image1} alt='logo'/>
       </div>
 
