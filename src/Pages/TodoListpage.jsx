@@ -20,7 +20,7 @@ export default function TodoListpage() {
     <div className='container'>
       <div className='child1'>
         <h1>To-Do List</h1>
-        <button className='account btn-grad1'>a</button>
+        <i className="fa-solid fa-user account"></i>
         <img src={image1} alt='logo'/>
       </div>
 

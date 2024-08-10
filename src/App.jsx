@@ -5,6 +5,7 @@ import Loginpage from './Pages/Loginpage.jsx';
 import Rootlayout from './Pages/Rootlayout.jsx';
 import Registerpage from './Pages/Registerpage.jsx';
 import ProtectedRoutes from './services/ProtectedRoutes.jsx';
+import Logout from './Pages/Logout.jsx';
 
 
 const router = createBrowserRouter([
