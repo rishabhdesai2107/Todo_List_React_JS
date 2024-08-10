@@ -5,7 +5,7 @@ import Logout from './Logout.jsx'
 
 export default function TodoListpage() {
   const [showMessage, setShowMessage] = useState(false);
-  const [todo,setTodo] = useState([]);
+  const [todo,setTodo] = useState(["asasaaaaaaaaaaaaaaaaaaaaaaaaa"]);
 
   const [isVisible, setIsVisible] = useState(false);
   const toggleVisibility = () => {
@@ -41,7 +41,9 @@ export default function TodoListpage() {
       <div className='child3'>
 
         <ul>
-
+          {todo.map((ele)=>{
+            return <li>{ele}</li>
+          })}
         </ul>
       </div>
     </div>
