@@ -6,6 +6,17 @@ import Logout from './Logout.jsx'
 export default function TodoListpage() {
   const [showMessage, setShowMessage] = useState(false);
   const [todo,setTodo] = useState(["asasaaaaaaaaaaaaaeeeeeee"]);
+  const [newTodo,setNewTodo] = useState("");
+
+  function updateTodoValue(e){
+    setNewTodo(e.target.value);
+  }
+
+  function addNewTask(){
+    setTodo([...todo,newTodo]);
+    setNewTodo("");
+  }
+
 
   const [isVisible, setIsVisible] = useState(false);
   const toggleVisibility = () => {
@@ -33,8 +44,8 @@ export default function TodoListpage() {
       </div>
       <br /><br /><br /><br />
       <div className='child2'>
-        <input type="text" placeholder='Enter your task here...' />
-        <button className='addbtn btn-grad2'>Add</button>
+        <input value={newTodo} onChange={updateTodoValue} type="text" placeholder='Enter your task here...' />
+        <button onClick={addNewTask} className='addbtn btn-grad2'>Add</button>
         <hr />
       </div>
 
