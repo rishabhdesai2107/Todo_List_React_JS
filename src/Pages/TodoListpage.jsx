@@ -13,7 +13,12 @@ export default function TodoListpage() {
   }
 
   function addNewTask(){
+    if (newTodo !== null && newTodo.trim() !== ""){
     setTodo((prev)=>{return[...prev,newTodo]});
+    }
+    else{
+      alert("Please enter a valid task!!");
+    }
     setNewTodo("");
   }
 
