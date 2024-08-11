@@ -50,8 +50,8 @@ export default function TodoListpage() {
       </div>
 
       <ul>
-          {todo.map((ele)=>{
-            return <li>{ele} <div className='btnsdeledit'>
+          {todo.map((ele,index)=>{
+            return <li key={index}>{index+1})&nbsp;{ele} <div className='btnsdeledit'>
               <button className='editt'><i class="fa-solid fa-pen-to-square fa-2xl"></i></button><button className='del'><i class="fa-solid fa-trash fa-2xl"></i></button>
               </div> </li>
           })}
