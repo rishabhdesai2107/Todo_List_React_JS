@@ -14,16 +14,25 @@ export default function Loginpage() {
   function handleSubmit(e) {
     e.preventDefault();
     const loggeduser = JSON.parse(localStorage.getItem("user"));
-    if(
-      input.email === loggeduser.email && input.password === loggeduser.password
-    ){
-      navigate("/TodoListpage");
-      localStorage.setItem("loggedin",true);
-    }
-    else{
-      alert("Wrong Email or Password entered");
-    }
-  };
+
+      try{
+        if(input.email === loggeduser.email && input.password === loggeduser.password)
+          {
+            navigate("/TodoListpage");
+            localStorage.setItem("loggedin",true);
+          }
+
+        else{
+          alert("Wrong Email or Password entered");
+          }
+      }
+
+      catch(err){
+        alert(`No user found. Please register!!`);
+      }
+      };
+
+
 
   return (
     <div id="login-container">
