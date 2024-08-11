@@ -5,7 +5,7 @@ import Logout from './Logout.jsx'
 
 export default function TodoListpage() {
   const [showMessage, setShowMessage] = useState(false);
-  const [todo,setTodo] = useState(["asasaaaaaaaaaaaaaeeeeeee"]);
+  const [todo,setTodo] = useState([]);
   const [newTodo,setNewTodo] = useState("");
 
   function updateTodoValue(e){
@@ -51,7 +51,9 @@ export default function TodoListpage() {
 
       <ul>
           {todo.map((ele)=>{
-            return <li>{ele}</li>
+            return <li>{ele} <div className='btnsdeledit'>
+              <button className='editt'><i class="fa-solid fa-pen-to-square fa-2xl"></i></button><button className='del'><i class="fa-solid fa-trash fa-2xl"></i></button>
+              </div> </li>
           })}
         </ul>
       </div>

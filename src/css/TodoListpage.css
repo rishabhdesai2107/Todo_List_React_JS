@@ -4,7 +4,6 @@
 }
 
 .container{
-
     background-image: linear-gradient(rgba(0,0,0,0.75),rgba(0,0,0,0.75)),url('../images/lion.jpg');
     background-size: cover;
     background-position: center;
@@ -16,7 +15,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
 }
 
 .child1{
@@ -32,15 +30,12 @@ h1{
     top: 20px;
 }
 
-
-
 .child2{
     display: flex;
     align-items: center;
     justify-content: center;
     position: absolute;
     top: 100px;
-
 }
 
 input{
@@ -51,8 +46,6 @@ input{
     border: none;
     font-size: large;
 }
-
-
 
 .btn-grad2 {
     background-image: linear-gradient(to right, #DC2424 0%, #4A569D  51%, #DC2424  100%);
@@ -74,7 +67,6 @@ input{
     color: #fff;
     text-decoration: none;
   }
-
 
 .account{
     position: absolute;
@@ -117,6 +109,7 @@ ul {
 }
 
 li {
+    
     width: 100%;
     font-size: xx-large;
     border-radius: 5px;
@@ -127,8 +120,8 @@ li {
     padding: 5px;
     box-sizing: border-box;
     display: block;
+    display: flex;
 }
-
 
 hr{
     color: #fff;
@@ -137,6 +130,27 @@ hr{
     bottom: 0px;
 }
 
+.btnsdeledit{
+    position: absolute;
+    right: 2px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+}
+
+
+
+.del{
+    background-color: transparent;
+    border: none;
+    margin: 5px;
+}
+
+.editt{
+    background-color: transparent;
+    border: none;
+    margin: 5px;
+}
 
 
 
