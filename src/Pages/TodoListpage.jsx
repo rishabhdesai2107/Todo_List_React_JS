@@ -1,36 +1,52 @@
 import React, { useState, useEffect } from 'react';
 import '../css/TodoListpage.css';
-import image1 from '../images/mylogo.gif'
-import Logout from './Logout.jsx'
+import image1 from '../images/mylogo.gif';
+import Logout from './Logout.jsx';
+import { v4 as uuidv4 } from 'uuid';
 
 export default function TodoListpage() {
   const [showMessage, setShowMessage] = useState(false);
-  const [todo,setTodo] = useState([]);
-  const [newTodo,setNewTodo] = useState("");
+  const [todo, setTodo] = useState([]);
+  const [newTodo, setNewTodo] = useState("");
+  const [completedTasks, setCompletedTasks] = useState([]);
 
-  function updateTodoValue(e){
+  function updateTodoValue(e) {
     setNewTodo(e.target.value);
   }
 
-  function addNewTask(){
-    if (newTodo !== null && newTodo.trim() !== ""){
-    setTodo((prev)=>{return[...prev,newTodo]});
-    }
-    else{
+  function addNewTask() {
+    if (newTodo.trim() !== "") {
+      const newTask = {
+        id: uuidv4(),
+        text: newTodo,
+      };
+      setTodo((prev) => [...prev, newTask]);
+    } else {
       alert("Please enter a valid task!!");
     }
     setNewTodo("");
   }
 
-  function editBtn(index) {
-    const updatedTodo = prompt("Edit your task:", todo[index]);
-    if (updatedTodo !== null && updatedTodo.trim() !== "") {
-      setTodo(todo.map((task, i) => (i === index ? updatedTodo : task)));
+  function editBtn(id) {
+    const updatedTodo = prompt("Edit your task:", todo.find(task => task.id === id)?.text);
+    if (updatedTodo !== null) {
+      setTodo(todo.map((task) => (task.id === id ? { ...task, text: updatedTodo } : task)));
     }
   }
 
-  function delBtn(index){
-    setTodo(todo.filter((_,i) => i !== index));
+  function delBtn(id) {
+    setTodo(todo.filter((task) => task.id !== id));
+    setCompletedTasks(completedTasks.filter((taskId) => taskId !== id));
+  }
+
+  function handleCheckboxChange(id) {
+    setCompletedTasks((prev) => {
+      if (prev.includes(id)) {
+        return prev.filter((taskId) => taskId !== id);
+      } else {
+        return [...prev, id];
+      }
+    });
   }
 
   const [isVisible, setIsVisible] = useState(false);
@@ -49,13 +65,12 @@ export default function TodoListpage() {
     }
   }, [showMessage]);
 
-
   return (
     <div className='container'>
       <div className='child1'>
         <h1>To-Do List</h1>
-        <i onClick={toggleVisibility} className="fa-solid fa-user account">{isVisible ? <Logout/> : null}</i>
-        <img src={image1} alt='logo'/>
+        <i onClick={toggleVisibility} className="fa-solid fa-user account">{isVisible ? <Logout /> : null}</i>
+        <img src={image1} alt='logo' />
       </div>
       <br /><br /><br /><br />
       <div className='child2'>
@@ -65,13 +80,30 @@ export default function TodoListpage() {
       </div>
 
       <ul>
-          {todo.map((ele,index)=>{
-            return <li key={index}>{ele} <div className='btnsdeledit'>
-              <button className='editt' onClick={()=>{editBtn(index)}}><i class="fa-solid fa-pen-to-square fa-2xl"></i></button>
-              <button className='del' onClick={()=>{delBtn(index)}}><i class="fa-solid fa-trash fa-2xl"></i></button>
-              </div> </li>
-          })}
-        </ul>
-      </div>
-    );
+        {todo.map((task) => {
+          return (
+            <li
+              key={task.id}
+              style={{
+                textDecoration: completedTasks.includes(task.id) ? "line-through" : "none",
+              }} >
+
+              <input className='cb'
+                type="checkbox"
+                checked={completedTasks.includes(task.id)}
+                onChange={() => handleCheckboxChange(task.id)}
+              />
+
+              {task.text}
+              <div className='btnsdeledit'>
+                <button className='editt' onClick={() => editBtn(task.id)}><i className="fa-solid fa-pen-to-square fa-2xl"></i></button>
+                <button className='del' onClick={() => delBtn(task.id)}><i className="fa-solid fa-trash fa-2xl"></i></button>
+              </div>
+
+            </li>
+          );
+        })}
+      </ul>
+    </div>
+  );
 }
