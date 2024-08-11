@@ -13,10 +13,20 @@ export default function TodoListpage() {
   }
 
   function addNewTask(){
-    setTodo([...todo,newTodo]);
+    setTodo((prev)=>{return[...prev,newTodo]});
     setNewTodo("");
   }
 
+  function editBtn(index) {
+    const updatedTodo = prompt("Edit your task:", todo[index]);
+    if (updatedTodo !== null && updatedTodo.trim() !== "") {
+      setTodo(todo.map((task, i) => (i === index ? updatedTodo : task)));
+    }
+  }
+
+  function delBtn(index){
+    setTodo(todo.filter((_,i) => i !== index));
+  }
 
   const [isVisible, setIsVisible] = useState(false);
   const toggleVisibility = () => {
@@ -51,8 +61,9 @@ export default function TodoListpage() {
 
       <ul>
           {todo.map((ele,index)=>{
-            return <li key={index}>{index+1})&nbsp;{ele} <div className='btnsdeledit'>
-              <button className='editt'><i class="fa-solid fa-pen-to-square fa-2xl"></i></button><button className='del'><i class="fa-solid fa-trash fa-2xl"></i></button>
+            return <li key={index}>{ele} <div className='btnsdeledit'>
+              <button className='editt' onClick={()=>{editBtn(index)}}><i class="fa-solid fa-pen-to-square fa-2xl"></i></button>
+              <button className='del' onClick={()=>{delBtn(index)}}><i class="fa-solid fa-trash fa-2xl"></i></button>
               </div> </li>
           })}
         </ul>
