@@ -24,6 +24,7 @@ export default function Loginpage() {
 
         else{
           alert("Wrong Email or Password entered");
+          setInput({ email: '', password: '' });
           }
       }
 
