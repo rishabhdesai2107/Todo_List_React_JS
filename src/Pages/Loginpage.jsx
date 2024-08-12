@@ -30,6 +30,7 @@ export default function Loginpage() {
 
       catch(err){
         alert(`No user found. Please register!!`);
+        setInput({ email: '', password: '' });
       }
       };
 

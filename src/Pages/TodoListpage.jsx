@@ -29,8 +29,11 @@ export default function TodoListpage() {
 
   function editBtn(id) {
     const updatedTodo = prompt("Edit your task:", todo.find(task => task.id === id)?.text);
-    if (updatedTodo !== null) {
+    if (updatedTodo !== null && updatedTodo.trim() !== "") {
       setTodo(todo.map((task) => (task.id === id ? { ...task, text: updatedTodo } : task)));
+    }
+    else{
+      alert("No task entered!! Please enter a valid task!!");
     }
   }
 
@@ -94,7 +97,7 @@ export default function TodoListpage() {
                 onChange={() => handleCheckboxChange(task.id)}
               />
 
-              {task.text}
+              <div className='task-text'>{task.text}</div>
               <div className='btnsdeledit'>
                 <button className='editt' onClick={() => editBtn(task.id)}><i className="fa-solid fa-pen-to-square fa-2xl"></i></button>
                 <button className='del' onClick={() => delBtn(task.id)}><i className="fa-solid fa-trash fa-2xl"></i></button>
