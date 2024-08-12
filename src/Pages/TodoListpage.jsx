@@ -98,6 +98,8 @@ export default function TodoListpage() {
               />
 
               <div className='task-text'>{task.text}</div>
+
+
               <div className='btnsdeledit'>
                 <button className='editt' onClick={() => editBtn(task.id)}><i className="fa-solid fa-pen-to-square fa-2xl"></i></button>
                 <button className='del' onClick={() => delBtn(task.id)}><i className="fa-solid fa-trash fa-2xl"></i></button>
