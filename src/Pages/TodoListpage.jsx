@@ -32,7 +32,7 @@ export default function TodoListpage() {
     if (updatedTodo !== null && updatedTodo.trim() !== "") {
       setTodo(todo.map((task) => (task.id === id ? { ...task, text: updatedTodo } : task)));
     }
-    else{
+    else {
       alert("No task entered!! Please enter a valid task!!");
     }
   }
